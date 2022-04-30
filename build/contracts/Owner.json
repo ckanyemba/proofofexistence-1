@@ -1,0 +1,254 @@
+{
+  "contractName": "Owner",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.13+commit.abaa5c0e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Owner.sol\":\"Owner\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/Owner.sol\":{\"keccak256\":\"0x48bc4268e3b01be2e4fe0fd3c8472b07801b014a0a19e5ff54d29b99e2e1adcb\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6f43fa5b16bcc97d5c1a4a2253a2116f7c531fe9503213b472c12f29594f3000\",\"dweb:/ipfs/QmS7J1jaiwQgcnSHZ2JnHemYC1Y8UzKDctcK7Rvu1cLEqh\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea264697066735822122083012ab5a3ab0d3e845d2c563802ea05dcb555147331e1a5ba7246dd51f1a8b564736f6c634300080d0033",
+  "deployedBytecode": "0x6080604052600080fdfea264697066735822122083012ab5a3ab0d3e845d2c563802ea05dcb555147331e1a5ba7246dd51f1a8b564736f6c634300080d0033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "179:349:1:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "179:349:1:-:0;;;;;",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.5.0 <0.9.0;\r\n\r\n/* @title Set the Owner of contract\r\n/ @author Nouman Ahmad\r\n@notice Save the owners address of contract\r\n*/ \r\ncontract Owner {\r\n    address private owner;\r\n    /*constructor(address _owner) public {\r\n        owner = _owner;\r\n    }*/\r\n\r\n    /* @author Nouman Ahmad\r\n    @notice check if the current user in owner/admin or not\r\n    */// \r\n    modifier isAdmin {\r\n        require(owner == msg.sender, \"You are not owner of this contract.\");\r\n        _;\r\n    }\r\n}",
+  "sourcePath": "/mnt/c/Users/kanye/ERC/proofofexistence-1/contracts/Owner.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/Owner.sol",
+    "exportedSymbols": {
+      "Owner": [
+        287
+      ]
+    },
+    "id": 288,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 272,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:31:1"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "Owner",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 287,
+        "linearizedBaseContracts": [
+          287
+        ],
+        "name": "Owner",
+        "nameLocation": "188:5:1",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 274,
+            "mutability": "mutable",
+            "name": "owner",
+            "nameLocation": "217:5:1",
+            "nodeType": "VariableDeclaration",
+            "scope": 287,
+            "src": "201:21:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 273,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "201:7:1",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 285,
+              "nodeType": "Block",
+              "src": "427:98:1",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 280,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "id": 277,
+                          "name": "owner",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 274,
+                          "src": "446:5:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "expression": {
+                            "id": 278,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 4294967281,
+                            "src": "455:3:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 279,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "src": "455:10:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "446:19:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "596f7520617265206e6f74206f776e6572206f66207468697320636f6e74726163742e",
+                        "id": 281,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "467:37:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_63e18de69690d5c72539007ccf9a2bb235f84bcf7bcc88c91cef7a06fe6d47cf",
+                          "typeString": "literal_string \"You are not owner of this contract.\""
+                        },
+                        "value": "You are not owner of this contract."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_63e18de69690d5c72539007ccf9a2bb235f84bcf7bcc88c91cef7a06fe6d47cf",
+                          "typeString": "literal_string \"You are not owner of this contract.\""
+                        }
+                      ],
+                      "id": 276,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "438:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 282,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "438:67:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 283,
+                  "nodeType": "ExpressionStatement",
+                  "src": "438:67:1"
+                },
+                {
+                  "id": 284,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "516:1:1"
+                }
+              ]
+            },
+            "id": 286,
+            "name": "isAdmin",
+            "nameLocation": "419:7:1",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 275,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "427:0:1"
+            },
+            "src": "410:115:1",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 288,
+        "src": "179:349:1",
+        "usedErrors": []
+      }
+    ],
+    "src": "33:495:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.13+commit.abaa5c0e.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.7",
+  "updatedAt": "2022-04-29T22:17:23.010Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
